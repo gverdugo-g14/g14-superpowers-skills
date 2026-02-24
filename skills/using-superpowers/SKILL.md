@@ -34,24 +34,17 @@ If the user does not pick a mode, default to **create**.
 
 These modes decide which skills are recommended vs optional. Other skills should follow the selected mode.
 
-### Mode Skill Matrix
+### Mode Index
 
-Use this matrix as the source of truth for skill usage in each mode.
+See per-mode guidance in `skills/using-superpowers/modes/`:
 
-**fix**
-- **Recommended:** using-superpowers
-- **Optional:** verification-before-completion (only for claims or if user asks), requesting-code-review (if user asks)
-- **Skipped by default:** brainstorming, writing-plans, test-driven-development, subagent-driven-development, using-git-worktrees
-
-**create**
-- **Recommended:** using-superpowers, brainstorming, writing-plans
-- **Default (recommended):** test-driven-development, verification-before-completion, subagent-driven-development
-- **Optional:** using-git-worktrees (if isolation needed), requesting-code-review (between tasks)
-
-**debug**
-- **Recommended:** using-superpowers, systematic-debugging
-- **Optional:** verification-before-completion (only for claims), test-driven-development (only if reproducing with tests), requesting-code-review (if user asks)
-- **Skipped by default:** brainstorming, writing-plans, subagent-driven-development, using-git-worktrees
+- `skills/using-superpowers/modes/free.md`
+- `skills/using-superpowers/modes/fix.md`
+- `skills/using-superpowers/modes/create.md`
+- `skills/using-superpowers/modes/debug.md`
+- `skills/using-superpowers/modes/ci-cd.md`
+- `skills/using-superpowers/modes/setup.md`
+- `skills/using-superpowers/modes/code-quality.md`
 
 ## The Rule
 
