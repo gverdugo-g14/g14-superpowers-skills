@@ -15,7 +15,7 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 ## When to Use
 
-**Always (create mode):**
+**Recommended (create mode):**
 - New features
 - Bug fixes
 - Refactoring
@@ -28,21 +28,21 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 Thinking "skip TDD just this once"? Stop. That's rationalization.
 
-## The Iron Law
+## The Core Guideline
 
 ```
-NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+Prefer not to write production code without a failing test first
 ```
 
-Write code before the test? Delete it. Start over.
+If you write code before the test, consider deleting it and starting over.
 
-**No exceptions:**
+**Exceptions are possible:**
 - Don't keep it as "reference"
 - Don't "adapt" it while writing tests
 - Don't look at it
 - Delete means delete
 
-Implement fresh from tests. Period.
+Prefer implementing fresh from tests.
 
 ## Red-Green-Refactor
 
@@ -112,7 +112,7 @@ Vague name, tests mock not code
 
 ### Verify RED - Watch It Fail
 
-**MANDATORY. Never skip.**
+**Strongly recommended. Avoid skipping.**
 
 ```bash
 npm test path/to/test.test.ts
@@ -167,7 +167,7 @@ Don't add features, refactor other code, or "improve" beyond the test.
 
 ### Verify GREEN - Watch It Pass
 
-**MANDATORY.**
+**Strongly recommended.**
 
 ```bash
 npm test path/to/test.test.ts

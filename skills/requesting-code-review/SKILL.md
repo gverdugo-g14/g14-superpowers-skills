@@ -11,7 +11,7 @@ Dispatch superpowers:code-reviewer subagent to catch issues before they cascade.
 
 ## When to Request Review
 
-**Mandatory:**
+**Recommended:**
 - After each task in subagent-driven development
 - After completing major feature
 - Before merge to main
@@ -91,7 +91,7 @@ You: [Fix progress indicators]
 
 ## Red Flags
 
-**Never:**
+**Avoid:**
 - Skip review because "it's simple"
 - Ignore Critical issues
 - Proceed with unfixed Important issues

@@ -15,7 +15,7 @@ You write test cases (pressure scenarios with subagents), watch them fail (basel
 
 **Core principle:** If you didn't watch an agent fail without the skill, you don't know if the skill teaches the right thing.
 
-**REQUIRED BACKGROUND:** You MUST understand superpowers:test-driven-development before using this skill. That skill defines the fundamental RED-GREEN-REFACTOR cycle. This skill adapts TDD to documentation.
+**Recommended background:** You should understand superpowers:test-driven-development before using this skill. That skill defines the fundamental RED-GREEN-REFACTOR cycle. This skill adapts TDD to documentation.
 
 **Official guidance:** For Anthropic's official skill authoring best practices, see anthropic-best-practices.md. This document provides additional patterns and guidelines that complement the TDD-focused approach in this skill.
 
@@ -75,7 +75,7 @@ API docs, syntax guides, tool documentation (office docs)
 ```
 skills/
   skill-name/
-    SKILL.md              # Main reference (required)
+    SKILL.md              # Main reference (recommended)
     supporting-file.*     # Only if needed
 ```
 
@@ -99,7 +99,7 @@ skills/
 - `description`: Third-person, describes ONLY when to use (NOT what it does)
   - Start with "Use when..." to focus on triggering conditions
   - Include specific symptoms, situations, and contexts
-  - **NEVER summarize the skill's process or workflow** (see CSO section for why)
+  - **Avoid summarizing the skill's process or workflow** (see CSO section for why)
   - Keep under 500 characters if possible
 
 ```markdown
@@ -177,7 +177,7 @@ description: Use when implementing any feature or bugfix, before writing impleme
 - Keep triggers technology-agnostic unless the skill itself is technology-specific
 - If skill is technology-specific, make that explicit in the trigger
 - Write in third person (injected into system prompt)
-- **NEVER summarize the skill's process or workflow**
+- **Avoid summarizing the skill's process or workflow**
 
 ```yaml
 # ❌ BAD: Too abstract, vague, doesn't include when to use
@@ -237,7 +237,7 @@ When searching, dispatch subagent with template...
 [20 lines of repeated instructions]
 
 # ✅ GOOD: Reference other skill
-Always use subagents (50-100x context savings). REQUIRED: Use [other-skill-name] for workflow.
+Always use subagents (50-100x context savings). Recommended: Use [other-skill-name] for workflow.
 ```
 
 **Compress examples:**
@@ -279,10 +279,10 @@ wc -w skills/path/SKILL.md
 
 **When writing documentation that references other skills:**
 
-Use skill name only, with explicit requirement markers:
-- ✅ Good: `**REQUIRED SUB-SKILL:** Use superpowers:test-driven-development`
-- ✅ Good: `**REQUIRED BACKGROUND:** You MUST understand superpowers:systematic-debugging`
-- ❌ Bad: `See skills/testing/test-driven-development` (unclear if required)
+Use skill name only, with explicit recommendation markers:
+- ✅ Good: `**RECOMMENDED SUB-SKILL:** Use superpowers:test-driven-development`
+- ✅ Good: `**RECOMMENDED BACKGROUND:** You should understand superpowers:systematic-debugging`
+- ❌ Bad: `See skills/testing/test-driven-development` (unclear if recommended)
 - ❌ Bad: `@skills/testing/test-driven-development/SKILL.md` (force-loads, burns context)
 
 **Why no @ links:** `@` syntax force-loads files immediately, consuming 200k+ context before you need them.
@@ -371,18 +371,18 @@ pptx/
 ```
 When: Reference material too large for inline
 
-## The Iron Law (Same as TDD)
+## The Core Guideline (Same as TDD)
 
 ```
-NO SKILL WITHOUT A FAILING TEST FIRST
+Prefer not to write a skill without a failing test first
 ```
 
 This applies to NEW skills AND EDITS to existing skills.
 
-Write skill before testing? Delete it. Start over.
-Edit skill without testing? Same violation.
+If you write a skill before testing, consider deleting it and starting over.
+If you edit a skill without testing, consider the same reset.
 
-**No exceptions:**
+**Exceptions are possible:**
 - Not for "simple additions"
 - Not for "just adding a section"
 - Not for "documentation updates"
@@ -390,7 +390,7 @@ Edit skill without testing? Same violation.
 - Don't "adapt" while running tests
 - Delete means delete
 
-**REQUIRED BACKGROUND:** The superpowers:test-driven-development skill explains why this matters. Same principles apply to documentation.
+**Recommended background:** The superpowers:test-driven-development skill explains why this matters. Same principles apply to documentation.
 
 ## Testing All Skill Types
 
@@ -454,7 +454,7 @@ Different skill types need different test approaches:
 | "Academic review is enough" | Reading ≠ using. Test application scenarios. |
 | "No time to test" | Deploying untested skill wastes more time fixing it later. |
 
-**All of these mean: Test before deploying. No exceptions.**
+**All of these mean: Test before deploying when possible.**
 
 ## Bulletproofing Skills Against Rationalization
 
@@ -541,7 +541,7 @@ Run pressure scenario with subagent WITHOUT the skill. Document exact behavior:
 - What rationalizations did they use (verbatim)?
 - Which pressures triggered violations?
 
-This is "watch the test fail" - you must see what agents naturally do before writing the skill.
+This is "watch the test fail" - you should see what agents naturally do before writing the skill.
 
 ### GREEN: Write Minimal Skill
 
@@ -580,22 +580,22 @@ step2 [label="read file"];
 helper1, helper2, step3, pattern4
 **Why bad:** Labels should have semantic meaning
 
-## STOP: Before Moving to Next Skill
+## Pause: Before Moving to Next Skill
 
-**After writing ANY skill, you MUST STOP and complete the deployment process.**
+**After writing ANY skill, you should stop and complete the deployment process.**
 
-**Do NOT:**
+**Avoid:**
 - Create multiple skills in batch without testing each
 - Move to next skill before current one is verified
 - Skip testing because "batching is more efficient"
 
-**The deployment checklist below is MANDATORY for EACH skill.**
+**The deployment checklist below is recommended for EACH skill.**
 
 Deploying untested skills = deploying untested code. It's a violation of quality standards.
 
 ## Skill Creation Checklist (TDD Adapted)
 
-**IMPORTANT: Use TodoWrite to create todos for EACH checklist item below.**
+**IMPORTANT: Use TodoWrite to create todos for EACH checklist item below when possible.**
 
 **RED Phase - Write Failing Test:**
 - [ ] Create pressure scenarios (3+ combined pressures for discipline skills)

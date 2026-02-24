@@ -4,22 +4,22 @@ description: Use when starting any conversation to select the session mode and d
 ---
 
 <EXTREMELY-IMPORTANT>
-If you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.
+If you think there is even a 1% chance a skill might apply to what you are doing, you should strongly consider invoking the skill.
 
-IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
+IF A SKILL APPLIES TO YOUR TASK, you should use it whenever it fits your context.
 
-This is not negotiable. This is not optional. You cannot rationalize your way out of this.
+This is strongly recommended. It is optional if your situation does not fit. Avoid rationalizing your way out of it.
 </EXTREMELY-IMPORTANT>
 
 ## How to Access Skills
 
-**In Claude Code:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you—follow it directly. Never use the Read tool on skill files.
+**In Claude Code:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you—follow it directly. Avoid using the Read tool on skill files.
 
 **In other environments:** Check your platform's documentation for how skills are loaded.
 
 # Using Skills
 
-## Session Startup (Required)
+## Session Startup (Recommended)
 
 Before any skill selection:
 
@@ -32,30 +32,30 @@ If the user does not pick a mode, default to **create**.
 
 ## Session Modes
 
-These modes decide which skills are required vs optional. Other skills MUST obey the selected mode.
+These modes decide which skills are recommended vs optional. Other skills should follow the selected mode.
 
 ### Mode Skill Matrix
 
 Use this matrix as the source of truth for skill usage in each mode.
 
 **fix**
-- **Required:** using-superpowers
+- **Recommended:** using-superpowers
 - **Optional:** verification-before-completion (only for claims or if user asks), requesting-code-review (if user asks)
 - **Skipped by default:** brainstorming, writing-plans, test-driven-development, subagent-driven-development, using-git-worktrees
 
 **create**
-- **Required:** using-superpowers, brainstorming, writing-plans
+- **Recommended:** using-superpowers, brainstorming, writing-plans
 - **Default (recommended):** test-driven-development, verification-before-completion, subagent-driven-development
 - **Optional:** using-git-worktrees (if isolation needed), requesting-code-review (between tasks)
 
 **debug**
-- **Required:** using-superpowers, systematic-debugging
+- **Recommended:** using-superpowers, systematic-debugging
 - **Optional:** verification-before-completion (only for claims), test-driven-development (only if reproducing with tests), requesting-code-review (if user asks)
 - **Skipped by default:** brainstorming, writing-plans, subagent-driven-development, using-git-worktrees
 
 ## The Rule
 
-**Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.
+**Try to invoke relevant or requested skills before any response or action.** Even a 1% chance a skill might apply means you should consider invoking the skill to check. If an invoked skill turns out to be wrong for the situation, you can skip it.
 
 ```dot
 digraph skill_flow {
@@ -104,7 +104,7 @@ These thoughts mean STOP—you're rationalizing:
 | "I can check git/files quickly" | Files lack conversation context. Check for skills. |
 | "I'll pick a mode later" | Mode selection comes first in every session. |
 | "I'll ask mode after a quick edit" | No edits before mode selection and startup checks. |
-| "I can skip git log or docs this time" | Startup checks are mandatory every session. |
+| "I can skip git log or docs this time" | Startup checks are recommended every session. |
 | "Let me gather information first" | Skills tell you HOW to gather information. |
 | "This doesn't need a formal skill" | If a skill exists, use it. |
 | "I remember this skill" | Skills evolve. Read current version. |

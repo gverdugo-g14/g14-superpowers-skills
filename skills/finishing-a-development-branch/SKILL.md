@@ -26,7 +26,7 @@ npm test / cargo test / pytest / go test ./...
 
 **If tests fail:**
 ```
-Tests failing (<N> failures). Must fix before completing:
+Tests failing (<N> failures). Recommended to fix before completing:
 
 [Show failures]
 
@@ -178,13 +178,13 @@ git worktree remove <worktree-path>
 
 ## Red Flags
 
-**Never:**
+**Avoid:**
 - Proceed with failing tests
 - Merge without verifying tests on result
 - Delete work without confirmation
 - Force-push without explicit request
 
-**Always:**
+**Recommended:**
 - Verify tests before offering options
 - Present exactly 4 options
 - Get typed confirmation for Option 4

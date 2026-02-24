@@ -26,7 +26,7 @@ WHEN receiving code review feedback:
 
 ## Forbidden Responses
 
-**NEVER:**
+**Avoid:**
 - "You're absolutely right!" (explicit CLAUDE.md violation)
 - "Great point!" / "Excellent feedback!" (performative)
 - "Let me implement that now" (before verification)
