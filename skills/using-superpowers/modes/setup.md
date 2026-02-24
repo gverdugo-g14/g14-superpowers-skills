@@ -2,26 +2,29 @@
 
 ## Goal
 
-Install, configure, and bring up the environment with clear steps.
+Set up developer tooling with a strong pre-commit workflow (formatters, linters, and optional tests).
 
 ## Base Flow
 
-1. Detect environment requirements and dependencies.
-2. Apply minimal configuration to get it running.
-3. Verify the environment is operational.
+1. Identify required formatters, linters, and test tooling.
+2. Configure a pre-commit pipeline to run them consistently.
+3. Make tests optional in pre-commit (fast vs full checks).
+4. Verify tooling runs locally and in CI.
 
 ## Execution Diagram
 
 ```dot
 digraph setup_mode_flow {
-    "Identify requirements" [shape=box];
-    "Install dependencies" [shape=box];
-    "Configure environment" [shape=box];
-    "Verify setup" [shape=box];
+    "Identify tooling" [shape=box];
+    "Configure pre-commit" [shape=box];
+    "Add formatters/linters" [shape=box];
+    "Optional: add tests" [shape=box];
+    "Verify locally and CI" [shape=box];
 
-    "Identify requirements" -> "Install dependencies";
-    "Install dependencies" -> "Configure environment";
-    "Configure environment" -> "Verify setup";
+    "Identify tooling" -> "Configure pre-commit";
+    "Configure pre-commit" -> "Add formatters/linters";
+    "Add formatters/linters" -> "Optional: add tests";
+    "Optional: add tests" -> "Verify locally and CI";
 }
 ```
 
