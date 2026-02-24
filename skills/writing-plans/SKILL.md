@@ -1,6 +1,6 @@
 ---
 name: writing-plans
-description: Use when you have a spec or requirements for a multi-step task, before touching code
+description: Use when in create mode and you have a spec or requirements for a multi-step task, before touching code
 ---
 
 # Writing Plans
@@ -12,6 +12,8 @@ Write comprehensive implementation plans assuming the engineer has zero context 
 Assume they are a skilled developer, but know almost nothing about our toolset or problem domain. Assume they don't know good test design very well.
 
 **Announce at start:** "I'm using the writing-plans skill to create the implementation plan."
+
+**Mode:** Only required in create mode. In fix/debug mode, use only if the user explicitly requests a plan.
 
 **Context:** This should be run in a dedicated worktree (created by brainstorming skill).
 

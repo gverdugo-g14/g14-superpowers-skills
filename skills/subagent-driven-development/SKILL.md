@@ -1,6 +1,6 @@
 ---
 name: subagent-driven-development
-description: Use when executing implementation plans with independent tasks in the current session
+description: Use when executing implementation plans with independent tasks in the current session in create mode
 ---
 
 # Subagent-Driven Development
@@ -10,6 +10,8 @@ Execute plan by dispatching fresh subagent per task, with two-stage review after
 **Core principle:** Fresh subagent per task + two-stage review (spec then quality) = high quality, fast iteration
 
 ## When to Use
+
+**Mode:** Use in create mode by default. In fix/debug mode, use only if the user explicitly asks to execute a plan with subagents.
 
 ```dot
 digraph when_to_use {

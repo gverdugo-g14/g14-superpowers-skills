@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Use when implementing any feature or bugfix, before writing implementation code
+description: Use when implementing features or bugfixes in create mode, before writing implementation code
 ---
 
 # Test-Driven Development (TDD)
@@ -15,13 +15,13 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 ## When to Use
 
-**Always:**
+**Always (create mode):**
 - New features
 - Bug fixes
 - Refactoring
 - Behavior changes
 
-**Exceptions (ask your human partner):**
+**Exceptions (ask your human partner or follow mode):**
 - Throwaway prototypes
 - Generated code
 - Configuration files
