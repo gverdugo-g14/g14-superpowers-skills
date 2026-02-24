@@ -7,8 +7,8 @@
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com"
   },
-  "homepage": "https://github.com/obra/superpowers",
-  "repository": "https://github.com/obra/superpowers",
+  "homepage": "https://github.com/gverdugo-g14/g14-superpowers-skills",
+  "repository": "https://github.com/gverdugo-g14/g14-superpowers-skills",
   "license": "MIT",
   "keywords": ["skills", "tdd", "debugging", "collaboration", "best-practices", "workflows"],
   "skills": "./skills/",
