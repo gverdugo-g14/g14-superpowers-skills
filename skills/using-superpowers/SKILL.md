@@ -23,10 +23,10 @@ This is strongly recommended. It is optional if your situation does not fit. Avo
 
 Before any skill selection:
 
-1. Review recent git history (last 10 commits).
-2. Identify and skim the most recently changed `.md` files in the repo.
+1. Review recent git history (last 2 commits).
+2. Identify and read markdown files in the last 2 commits.
 3. Ask the user which mode to use for this session:
-   "What mode do you want for this session? (fix / create / debug)"
+   "What mode do you want for this session? (fix / create / debug; optional: free / code-quality / docs / security / review / release / performance / setup / ci-cd)"
 
 If the user does not pick a mode, default to **create**.
 
@@ -34,9 +34,25 @@ If the user does not pick a mode, default to **create**.
 
 These modes decide which skills are recommended vs optional. Other skills should follow the selected mode.
 
+### Mode Summaries
+
+- **fix**: Quick changes with minimal process; skip planning by default.
+- **create**: New work; design + plan first, then implement.
+- **debug**: Systematic troubleshooting and root-cause analysis.
+- **free**: Minimal constraints; do the user request directly.
+- **ci-cd**: Build, test, release, and pipeline hygiene tasks.
+- **setup**: Bootstrap or reconfigure local project environments.
+- **code-quality**: Linting, audits, and quality checks (React focus).
+- **docs**: Write, update, or reorganize documentation.
+- **security**: Security review, scanning, and remediation steps.
+- **review**: Code review, QA, and verification-focused work.
+- **release**: Packaging, versioning, and release readiness.
+- **performance**: Profiling and performance tuning.
+
 ### Mode Index
 
-See per-mode guidance in `skills/using-superpowers/modes/`:
+See per-mode guidance in `skills/using-superpowers/modes/`.
+Optional development mode definitions live in `modes/` and are opt-in:
 
 - `skills/using-superpowers/modes/free.md`
 - `skills/using-superpowers/modes/fix.md`
